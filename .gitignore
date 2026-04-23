@@ -1,0 +1,5 @@
+venv/
+__pycache__/
+law_db/
+*.pyc
+.DS_Store
