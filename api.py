@@ -1,3 +1,4 @@
+# api.py
 from fastapi import FastAPI, File, UploadFile
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
@@ -7,7 +8,11 @@ import pypdf
 from io import BytesIO
 
 app = FastAPI()
+
+# Load embedding model
 model = SentenceTransformer('all-MiniLM-L6-v2')
+
+# Connect to vector database
 db = chromadb.PersistentClient(path="./law_db")
 collection = db.get_collection("laws")
 
@@ -18,14 +23,17 @@ class Agreement(BaseModel):
     text: str
 
 def analyze_text(text: str):
+    # Split text into individual clauses
     clauses = re.split(r'[.\n]+', text)
     clauses = [c.strip() for c in clauses if len(c.strip()) > 30]
     
     results = []
     for i, clause in enumerate(clauses):
+        # Retrieve relevant law from vector DB
         emb = model.encode(clause).tolist()
         retrieved = collection.query(query_embeddings=[emb], n_results=1)
         law = retrieved['documents'][0][0]
+        
         results.append({
             "clause_num": i+1,
             "text": clause[:200],
@@ -35,6 +43,7 @@ def analyze_text(text: str):
 
 @app.post("/ask")
 def ask(query: Query):
+    # Single question answering
     emb = model.encode(query.question).tolist()
     results = collection.query(query_embeddings=[emb], n_results=1)
     law = results['documents'][0][0]
@@ -42,10 +51,12 @@ def ask(query: Query):
 
 @app.post("/analyze-agreement")
 def analyze_agreement(agreement: Agreement):
+    # Analyze pasted agreement text
     return analyze_text(agreement.text)
 
 @app.post("/analyze-pdf")
 async def analyze_pdf(file: UploadFile = File(...)):
+    # Extract text from uploaded PDF
     contents = await file.read()
     pdf = pypdf.PdfReader(BytesIO(contents))
     
