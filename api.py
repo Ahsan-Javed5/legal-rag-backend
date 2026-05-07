@@ -1,4 +1,3 @@
-# api.py
 from fastapi import FastAPI, File, UploadFile
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
@@ -9,12 +8,15 @@ from io import BytesIO
 
 app = FastAPI()
 
-# Load embedding model
+DB_PATH = "/workspace/chroma_db"
+
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# Connect to vector database
-db = chromadb.PersistentClient(path="./law_db")
-collection = db.get_collection("laws")
+db = chromadb.PersistentClient(path=DB_PATH)
+
+# SAFE collection access
+collection = db.get_or_create_collection("laws")
+
 
 class Query(BaseModel):
     question: str
@@ -22,46 +24,67 @@ class Query(BaseModel):
 class Agreement(BaseModel):
     text: str
 
+
 def analyze_text(text: str):
-    # Split text into individual clauses
     clauses = re.split(r'[.\n]+', text)
     clauses = [c.strip() for c in clauses if len(c.strip()) > 30]
-    
+
     results = []
+
     for i, clause in enumerate(clauses):
-        # Retrieve relevant law from vector DB
+
         emb = model.encode(clause).tolist()
-        retrieved = collection.query(query_embeddings=[emb], n_results=1)
-        law = retrieved['documents'][0][0]
-        
+
+        retrieved = collection.query(
+            query_embeddings=[emb],
+            n_results=1
+        )
+
+        law = retrieved["documents"][0][0] if retrieved["documents"] else "No match found"
+
         results.append({
-            "clause_num": i+1,
+            "clause_num": i + 1,
             "text": clause[:200],
             "law": law[:300]
         })
-    return {"total_clauses": len(clauses), "results": results}
+
+    return {
+        "total_clauses": len(clauses),
+        "results": results
+    }
+
 
 @app.post("/ask")
 def ask(query: Query):
-    # Single question answering
     emb = model.encode(query.question).tolist()
-    results = collection.query(query_embeddings=[emb], n_results=1)
-    law = results['documents'][0][0]
-    return {"answer": law, "law": law}
+
+    results = collection.query(
+        query_embeddings=[emb],
+        n_results=1
+    )
+
+    law = results["documents"][0][0] if results["documents"] else "No match found"
+
+    return {
+        "answer": law
+    }
+
 
 @app.post("/analyze-agreement")
 def analyze_agreement(agreement: Agreement):
-    # Analyze pasted agreement text
     return analyze_text(agreement.text)
+
 
 @app.post("/analyze-pdf")
 async def analyze_pdf(file: UploadFile = File(...)):
-    # Extract text from uploaded PDF
+
     contents = await file.read()
     pdf = pypdf.PdfReader(BytesIO(contents))
-    
+
     text = ""
     for page in pdf.pages:
-        text += page.extract_text()
-    
+        page_text = page.extract_text()
+        if page_text:
+            text += page_text
+
     return analyze_text(text)
