@@ -1,274 +1,309 @@
-## SYNONYM MAPPING (embedded inline for detection)
-# For "tenant": lessee, renter, occupant, resident, leaseholder, tenement holder, letting party (hirer), user, possessor, lodger, subtenant
-# For "landlord": lessor, owner, property owner, house owner, rental giver, leaser, proprietor, landlady, landholder, real estate owner, mutawalli (for waqf properties)
-# For "rent": lease amount, monthly charge, hire charge, occupancy fee, consideration, payment, dues, rental value
-# For "agreement": contract, lease deed, tenancy contract, rental deed, rent accord, instrument, memorandum of tenancy
-# For "premises": property, house, flat, apartment, shop, office, building, unit, accommodation, tenement, holding
-# For "eviction": ejectment, dispossession, ouster, recovery of possession, vacant possession proceeding
-# For "security deposit": advance, earnest money, caution money, guarantee amount, surety deposit
-
-============================================================
-### SECTION 1 – JURISDICTION AND APPLICABILITY
-============================================================
-
-1.1 Pakistan has four provincial rental acts and one for Islamabad Capital Territory (ICT):
-- Punjab Rented Premises Act (2010, amended 2017, 2022)
-- Sindh Rented Premises Ordinance 1979 (with 2021 amendments)
-- Khyber Pakhtunkhwa Rented Premises Act 2014
-- Balochistan Rented Premises Act 1986 (updated 2019)
-- ICT Rent Restriction Ordinance 2001
-
-1.2 Applicability threshold (all acts): Applies to all rented/leased/let premises where monthly rent/lease amount does not exceed PKR 100,000 (Punjab) or PKR 50,000 (Sindh, KPK, Balochistan, ICT). For premises above limit, general contract law applies.
-
-1.3 Exclusions: Cantonment areas (governed by Cantonment Rent Restriction Act 1963), premises owned by federal/provincial governments, waqf properties registered under waqf acts.
-
-============================================================
-### SECTION 2 – DEFINITIONS (with synonyms)
-============================================================
-
-2.1 "Tenant" / "Lessee" / "Renter" / "Occupant" / "Resident" / "Leaseholder" / "Lodger" / "Subtenant" means a person who occupies or uses the premises of another person for a temporary period in consideration of rent, and includes his/her heirs, successors, and legal representatives.
-
-2.2 "Landlord" / "Lessor" / "Owner" / "Property Owner" / "Proprietor" / "House owner" / "Leaser" means a person who gives on rent or lease any premises to another person, and includes his/her heirs, successors, and legal representatives.
-
-2.3 "Rent" / "Lease amount" / "Monthly charge" / "Occupancy fee" / "Hire charge" means the monetary consideration payable periodically by the tenant to the landlord for use and occupation of the premises.
-
-2.4 "Rent Controller" / "Rent Tribunal" / "Rent Magistrate" means the officer appointed by the provincial government to exercise powers under the respective Rental Act.
-
-============================================================
-### SECTION 3 – COMPULSORY WRITTEN AGREEMENT (Punjab Section 5, Sindh Section 4, KPK Section 6)
-============================================================
-
-3.1 Every tenancy / lease / rental arrangement, whether oral or written, shall be reduced to writing within 30 days of commencement. The registered / stamped / executed rental agreement / contract / deed shall contain:
-- Names and CNIC of both parties (landlord/lessor/owner AND tenant/lessee/occupant)
-- Complete description of premises/property/house/shop/unit including address, area, boundaries
-- Monthly rent / lease amount / hire charge in figures and words
-- Security deposit / advance / earnest money amount
-- Duration / term / period of tenancy (whether fixed term or periodic)
-- Date of commencement / start date / possession date
-- Purpose of tenancy (residential / commercial / industrial / agricultural)
-
-3.2 If no written agreement/contract exists, the tenancy shall be deemed to be month‑to‑month / periodic tenancy on the first day of the month following the delivery of possession.
-
-3.3 Penalty for non‑registration of rent agreement: Under Punjab Act, the Rent Controller may impose a fine up to PKR 50,000 on the landlord/owner if they fail to provide a written lease deed within stipulated time.
-
-============================================================
-### SECTION 4 – RENT FIXATION AND INCREASE LIMITS
-============================================================
-
-4.1 Initial rent / starting lease amount cannot exceed the amount mutually agreed in the tenancy deed / agreement.
-
-4.2 **No rent increase / upward revision / hike in lease amount is permitted during the first 3 (three) years** from the commencement date unless specifically agreed in writing at the time of signing the original contract. (Punjab Section 6, Sindh Section 7, KPK Section 8)
-
-4.3 After the first 3 years, the landlord / lessor / owner may increase the rent / monthly charge once every 3 years by not more than 10% of the existing rent. For commercial premises, maximum increase is 15% every 3 years.
-
-4.4 Any attempted increase above the statutory limit is void / illegal / unenforceable. The tenant / lessee can challenge it before the Rent Controller.
-
-4.5 If the landlord / owner has made any capital improvement / structural addition to the premises with the tenant’s consent, an additional 5% increase per annum may be allowed but not more than total of 15% in a year.
-
-============================================================
-### SECTION 5 – SECURITY DEPOSIT (Advance / Caution Money)
-============================================================
-
-5.1 The landlord / owner may demand security deposit / advance not exceeding two months’ rent for residential premises and three months’ rent for commercial premises. (Punjab Section 7)
-
-5.2 The security deposit / earnest money shall be refunded / returned to the tenant / lessee / occupant within 30 days of vacating / handing over vacant possession of the premises.
-
-5.3 Deductions from security deposit / guarantee amount are allowed only for:
-- Unpaid rent / arrears of lease amount
-- Damages beyond normal wear and tear (broken fixtures, holes in walls, missing fixtures)
-- Outstanding utility bills (electricity, gas, water) in tenant’s name
-
-5.4 If the landlord / lessor fails to refund the deposit / advance within 30 days without valid reason, the tenant may claim double the deposit amount from the Rent Controller.
-
-============================================================
-### SECTION 6 – DUTIES OF LANDLORD / LESSOR / OWNER
-============================================================
-
-6.1 The landlord / owner shall maintain the premises / property in a habitable / fit for use condition, including:
-- Structural repairs (roof, walls, foundation, floor)
-- Plumbing and sanitation system
-- Electrical wiring and main switches
-- Water supply and drainage
-
-6.2 The landlord / leaser cannot cut off / disconnect essential utilities (water, electricity, gas) for any reason, even if rent is unpaid. Such act is a criminal offense under Section 430 PPC (mischief) and actionable under the Rental Act with penalty up to PKR 100,000 and imprisonment.
-
-6.3 The landlord / property owner shall provide a rent receipt / payment acknowledgment to the tenant / lessee for every rent payment made. Failure to provide receipt allows the tenant to withhold rent until receipt is issued.
-
-6.4 The landlord / lessor cannot enter the tenanted premises / occupied unit without giving at least 24 hours’ prior notice and without the tenant’s consent, except in emergency (fire, gas leak, structural collapse).
-
-============================================================
-### SECTION 7 – DUTIES OF TENANT / LESSEE / OCCUPANT
-============================================================
-
-7.1 The tenant / renter / resident shall pay the rent / lease amount on or before the due date (usually 1st to 10th of every month).
-
-7.2 The tenant / occupant shall not cause nuisance or disturb neighbors, nor use the premises for any illegal activity (gambling, drug manufacturing, prostitution). Violation is a ground for immediate eviction / ejectment.
-
-7.3 The tenant / leaseholder cannot sublet / assign / transfer the premises to any third person without the landlord’s / owner’s written permission. Unauthorized subletting is a ground for eviction.
-
-7.4 The tenant / resident shall inform the landlord / lessor of any major repair needed (leaking roof, broken water pipe) within 7 days of discovery.
-
-7.5 The tenant / occupant shall allow the landlord / owner (or their agent) to inspect the premises with 24 hours’ notice and during daytime hours, not more than once per month.
-
-============================================================
-### SECTION 8 – GROUNDS FOR EVICTION / EJECTMENT / DISPOSSESSION
-============================================================
-
-A landlord / lessor / owner may file an application before the Rent Controller / Rent Tribunal for recovery of possession / eviction order on the following grounds (cumulative list across all Pakistani rental laws):
-
-8.1 **Non‑payment of rent / arrears** : The tenant / lessee has failed to pay rent / lease amount for three consecutive months without reasonable cause.
-
-8.2 **Bona fide personal need** : The landlord / owner requires the premises for his/her own occupation or for the occupation of his/her dependent children / unmarried daughters / widowed daughter / parents / spouse. (Punjab Section 17, Sindh Section 15, KPK Section 18)  
-    - If the landlord owns another suitable residential property in the same city, this ground fails.  
-    - The landlord must not have evicted a tenant in the last 3 years under this ground.
-
-8.3 **Building demolition and reconstruction** : The premises is old, dilapidated, and needs demolition and reconstruction. The landlord must provide an approved building plan and undertake to give the tenant first right of re‑tenancy after reconstruction at similar rent.
-
-8.4 **Subletting without consent** : The tenant has sublet / transferred / assigned the whole or part of the premises to another person without the landlord’s written permission.
-
-8.5 **Misuse of premises** : The tenant uses the premises for a purpose other than what was agreed in the rental agreement / lease deed (e.g., running a factory in a residential flat).
-
-8.6 **Nuisance or illegal activity** : The tenant has committed nuisance (loud music, harassment) or engaged in any illegal act (theft, drug peddling) on the premises.
-
-8.7 **Material breach of agreement** : The tenant violates any other essential term of the written tenancy contract / lease deed (e.g., keeping pets where prohibited, altering structure).
-
-8.8 **Refusal to allow inspection** : The tenant repeatedly denies access to the landlord for inspection after proper notice.
-
-============================================================
-### SECTION 9 – PROCEDURE FOR EVICTION (Uniform across provinces)
-============================================================
-
-9.1 The landlord / owner / lessor shall file a petition / application / claim before the Rent Controller of the city/town where the premises is situated.
-
-9.2 The Rent Controller shall issue notice to the tenant / occupant / respondent within 7 days.
-
-9.3 The tenant / lessee may file a written statement / reply within 30 days. If no reply is filed, the Rent Controller may proceed ex‑parte.
-
-9.4 The Rent Controller shall decide the eviction application within 6 months from filing, after giving both parties an opportunity to lead evidence.
-
-9.5 Any aggrieved party (landlord or tenant) may appeal to the District Judge / Rent Tribunal within 30 days of the Rent Controller’s order.
-
-9.6 No execution of eviction order shall take place until the time for appeal has expired or, if appeal filed, until the appellate court decides.
-
-============================================================
-### SECTION 10 – RENT CONTROLLER’S POWERS (Section 4 & 10-12, all acts)
-============================================================
-
-10.1 The Rent Controller has the same powers as a Civil Court for:
-- Summoning and enforcing attendance of witnesses
-- Requiring discovery and production of documents
-- Receiving evidence on affidavits
-- Issuing commissions for examination of witnesses
-
-10.2 The Rent Controller may order interim relief, such as:
-- Direction to pay undisputed rent into court
-- Appointment of a receiver for the premises
-- Temporary injunction against harassment or utility cut‑off
-
-10.3 The Rent Controller may impose costs / penalties up to PKR 50,000 for filing frivolous or vexatious eviction or rent increase petitions.
-
-============================================================
-### SECTION 11 – SPECIAL PROTECTIONS FOR CERTAIN TENANTS
-============================================================
-
-11.1 **Senior citizens (above 65 years)** : No eviction from a rented premises that has been occupied continuously for 10 years or more, except for non‑payment of rent for 6 months or demolition.
-
-11.2 **Widows and disabled persons** : Eviction only on grounds of non‑payment of rent for 12 consecutive months or tenant’s illegal activity.
-
-11.3 **Government employees** (active service): If a government servant is transferred, the tenancy may be terminated by giving 30 days’ notice without penalty.
-
-11.4 **Lawyers and doctors** using premises as professional chamber: Eviction not allowed if alternative suitable premises is not available in same locality.
-
-============================================================
-### SECTION 12 – TERMINATION OF TENANCY (Notice Periods)
-============================================================
-
-12.1 **Month‑to‑month tenancy** (no fixed term): Either party (landlord / tenant) may terminate by giving 15 days’ notice in writing expiring with the end of a rental month (Punjab), or 30 days (Sindh, KPK).
-
-12.2 **Fixed‑term tenancy** (e.g., 1 year): The tenancy automatically expires on the end date. If both parties continue to operate without a new agreement, it becomes a month‑to‑month tenancy.
-
-12.3 **Early termination by tenant** : Tenant may terminate early by paying compensation equal to 2 months’ rent to the landlord, unless the lease deed specifies a lower amount.
-
-12.4 **Early termination by landlord** : Landlord cannot terminate a fixed term tenancy before the expiry date except on grounds listed in Section 8.
-
-============================================================
-### SECTION 13 – SECURITY OF TENURE FOR COMMERCIAL TENANTS
-============================================================
-
-13.1 A commercial tenant / shopkeeper / office occupant who has been in continuous occupation for 20 years or more has a permanent right of tenancy. The landlord can only evict for non‑payment of rent for 2 years or for building demolition approved by the municipal corporation.
-
-13.2 In case of demolition, the commercial tenant shall be offered an alternative shop in the same building (after reconstruction) at 50% of the market rent.
-
-============================================================
-### SECTION 14 – RENT AGREEMENT REGISTRATION (Punjab & ICT only)
-============================================================
-
-14.1 Every rent agreement / lease deed of duration exceeding 11 months must be registered with the Sub‑Registrar (stamp duty of 1% of total rent for the period).
-
-14.2 Unregistered rent agreements are still valid as evidence of tenancy but cannot be relied upon for claims exceeding one year.
-
-14.3 E‑stamping of rent agreements is mandatory in Punjab, Islamabad, and Karachi (partial Sindh).
-
-============================================================
-### SECTION 15 – PENALTIES AND OFFENCES (Relevant PPC Sections)
-============================================================
-
-15.1 **Cutting off utility** by landlord: Offence under Section 430 PPC (mischief) – imprisonment up to 1 year or fine, plus additional penalty under Rental Act of PKR 100,000.
-
-15.2 **Landlord entering premises without notice** : May be prosecuted for trespass (Section 441 PPC) – imprisonment up to 3 months.
-
-15.3 **Tenant refusing to vacate after eviction order** : Can be evicted by police help under Section 21 of the Rental Act (similar to Section 145 CrPC). Tenant also liable for damages at double the monthly rent for each month of overstay.
-
-15.4 **Forged rent agreement** : Punishable under Section 468 PPC (forgery for cheating) – imprisonment up to 7 years.
-
-============================================================
-### SECTION 16 – COMMON SYNONYM VARIATIONS (Explicitly stated for better retrieval)
-============================================================
-
-The following phrases have identical legal meaning in all Pakistani rental statutes:
-
-- “Tenant” = “Lessee” = “Renter” = “Occupant” = “Leaseholder” = “Lodger” = “Resident” = “Subtenant” (when subletting permitted)
-- “Landlord” = “Lessor” = “Owner” = “Property Owner” = “House owner” = “Proprietor” = “Landholder”
-- “Rent” = “Lease amount” = “Monthly charge” = “Hire charge” = “Occupancy fee”
-- “Agreement” = “Contract” = “Lease deed” = “Tenancy contract” = “Rental deed”
-- “Eviction” = “Ejectment” = “Dispossession” = “Recovery of possession”
-- “Security deposit” = “Advance rent” = “Caution money” = “Earnest money”
-- “Premises” = “Property” = “Accommodation” = “Holding” = “Tenement” = “Unit”
-
-Any query containing any of these synonyms shall be treated as referring to the same legal concept.
-
-============================================================
-### SECTION 17 – MODEL CLAUSES FOR INCLUSION IN RENTAL AGREEMENTS
-============================================================
-
-17.1 **Clause for rent increase after 3 years** : "The monthly rent may be increased by not more than 10% after every 36 months from the commencement date, subject to landlord giving 30 days’ written notice to the tenant."
-
-17.2 **Clause for maintenance responsibility** : "The landlord shall be responsible for structural repairs and replacement of plumbing/electricity lines. The tenant shall be responsible for minor repairs costing less than PKR 5,000 and for replacement of bulbs, fuses, and washroom fixtures."
-
-17.3 **Clause for dispute resolution** : "Any dispute arising under this lease deed shall first be attempted to be resolved through mediation. If mediation fails, jurisdiction lies exclusively with the Rent Controller of [city name]."
-
-17.4 **Clause for termination** : "This tenancy contract is for a fixed period of 12 months. After expiry, if not renewed, the tenant shall vacate peacefully. The landlord may terminate earlier only on grounds enumerated in the Rent Act."
-
-============================================================
-### SECTION 18 – FREQUENTLY ASKED LEGAL PRINCIPLES (from case law)
-============================================================
-
-18.1 **In case of conflict** between the written rental agreement and the statutory Rental Act, the Act prevails. Any clause that waives a mandatory protection for the tenant (e.g., no right to challenge illegal eviction) is void.
-
-18.2 **If a tenant pays increased rent** voluntarily without objection for 12 months, it is deemed acceptance. However, if the increase exceeds statutory limit, tenant can still challenge within 2 years.
-
-18.3 **Death of landlord or tenant** : The tenancy continues; the heirs of the landlord step into the landlord’s shoes, and the tenant’s heirs have the same rights as the original tenant for the unexpired term.
-
-18.4 **Rent can be paid by bank transfer, cash, cheque, or digital wallet**. Landlord cannot force payment only in cash.
-
-18.5 **Notice to vacate must be in Urdu or English** and served by registered post, courier, or through WhatsApp (if agreed). A notice by email is valid only if the agreement mentions email as a mode of communication.
-
-============================================================
-### SECTION 19 – DISTINCTIONS BETWEEN PROVINCES (For precise detection)
-============================================================
-
-- **Punjab**: Rent increase allowed once every 3 years, maximum 10%. Security deposit max 2 months’ rent residential, 3 months’ commercial. Tenant can deposit rent in court if landlord refuses receipt.
-- **Sindh**: Rent increase allowed after 2 years (not 3), maximum 15% for residential, 20% commercial. Security deposit max 1 month for residential, 2 months commercial.
-- **KPK**: Rent increase allowed after 4 years (longest period), maximum 8% for residential, 12% commercial. Landlord must give 6 months’ notice for eviction for personal need.
-- **Balochistan**: Follows 1986 Act – rent increase after 2 years, maximum 10%. No specific cap on security deposit but courts limit to 2 months.
-- **ICT**: No rent increase for first 2 years, afterwards 10% every 2 years. Security deposit max 2 months’ rent.
+5.1: A rental agreement should be in written form to be legally strong.
+5.2: Both landlord and tenant should sign the agreement.
+5.3: Witnesses should also sign the agreement for better proof.
+5.4: The agreement should clearly mention the monthly rent amount.
+5.5: The agreement should clearly mention the security deposit amount.
+5.6: The agreement should mention the full property address.
+5.7: The agreement should mention the date when tenancy starts.
+5.8: The agreement should mention the date when tenancy ends (if fixed).
+5.9: The agreement should mention the date each month when rent is due.
+5.10: The agreement should mention who pays electricity, gas, and water bills.
+5.11: Oral (verbal) rental agreements are weak if a dispute goes to court.
+5.12: Registered agreements give much stronger legal protection.
+5.13: Both parties should keep a signed copy of the agreement.
+5.14: Hidden conditions should not be added after signing without consent.
+5.15: A landlord should not force a tenant to sign blank papers.
+5.16: A tenant should read all clauses carefully before signing.
+5.17: Unclear or vague clauses can create legal disputes later.
+5.18: The agreement should mention how many days of notice to give before leaving.
+5.19: The agreement should mention rules for returning the security deposit.
+5.20: Fake promises made outside the agreement may not be accepted in court.
+8.1: Rental agreements should be registered when possible for safety.
+8.2: Registration helps in getting legal protection during disputes.
+8.3: Registered agreements are easier to enforce in court.
+8.4: Police tenant registration is commonly required in Islamabad.
+8.5: Tenant identity documents should be verified by landlord.
+8.6: Landlord should keep a copy of tenant's CNIC.
+8.7: Tenant should verify property ownership before renting.
+8.8: Fake ownership claims can create serious legal problems.
+8.9: Rent Officer may ask for agreement details during a case.
+8.10: Unregistered agreements can create difficulty during eviction cases.
+9.1: Tenant must pay rent on time as agreed.
+9.2: Rent payment date should follow what is written in the agreement.
+9.3: Delayed rent can become a legal ground for eviction.
+9.4: Tenant should keep proof of every rent payment.
+9.5: Bank transfer receipts are very useful as evidence.
+9.6: Cash payments without any proof can create disputes later.
+9.7: Landlord should not deny receiving rent unfairly.
+9.8: Landlord can file a case with Rent Officer for unpaid rent.
+9.9: Tenant should ask for a written receipt after every payment.
+9.10: Advance rent conditions should be clearly written in the agreement.
+9.11: Extra hidden charges should not be imposed after signing.
+9.12: Utility bills should be paid according to the agreement.
+9.13: Tenant should not stop paying rent without a legal reason.
+9.14: Rent disputes can be taken to the Rent Officer for decision.
+9.15: Landlord should not take illegal penalties or fines.
+10.1: Landlord cannot increase rent whenever he wants.
+10.2: Rent increase should follow the law or what the agreement says.
+10.3: Sudden unfair rent increase can be challenged before Rent Officer.
+10.4: Residential property rent increase is regulated by law.
+10.5: Commercial property rent increase is also regulated.
+10.6: Rent increase should be communicated clearly to tenant.
+10.7: Tenant should be informed before any rent increase takes effect.
+10.8: Old rent amount remains valid until a legal increase happens.
+10.9: Rent disputes about increase can be filed before Rent Officer.
+10.10: Forced rent increase without proper notice may be challenged.
+10.11: Landlord should not threaten tenant for higher rent.
+10.12: Unreasonable rent increase can become a court matter.
+11.1: Security deposit amount should be clearly written in the agreement.
+11.2: Landlord should return the deposit after tenancy ends.
+11.3: Deposit deductions should have valid reasons (like damage or unpaid bills).
+11.4: Normal wear and tear is not considered major damage.
+11.5: Fake damage claims should not be used to keep the deposit.
+11.6: Unpaid utility dues may be adjusted from the deposit if allowed.
+11.7: Deposit disputes can be taken to court or Rent Officer.
+11.8: Tenant should take pictures of the property before leaving.
+11.9: Tenant should clear all bills before asking for deposit return.
+11.10: Deposit should not be kept forever without any valid reason.
+11.11: Landlord should explain each deduction clearly in writing.
+11.12: Verbal promises about deposit can create disputes with no proof.
+12.1: Landlord should not demand illegal extra money.
+12.2: Illegal premium charges (key money) are not allowed.
+12.3: Forced payments outside the agreement may be challenged in court.
+12.4: Tenant can recover illegally charged money through legal process.
+12.5: Hidden renewal fees should not be forced on tenant.
+12.6: All charges should be transparent and written in advance.
+12.7: Fake maintenance charges should not be imposed.
+12.8: Money taken unfairly can become a legal dispute.
+14.1: Landlord should not cut electricity unfairly.
+14.2: Landlord should not cut water supply unfairly.
+14.3: Landlord should not block gas connection illegally.
+14.4: Tenant has the right to basic facilities in the rented property.
+14.5: Landlord should not harass tenant by stopping utilities.
+14.6: Shared utility rules (if any) should be written clearly.
+14.7: Illegal pressure tactics like cutting utilities are not allowed.
+14.8: Utility disputes can be reported to Rent Officer.
+14.9: Tenant should pay utility bills according to agreement.
+14.10: Landlord should not enter the property without a proper reason.
+14.11: Tenant privacy should be respected by landlord.
+14.12: Landlord should give notice before inspection if possible.
+14.13: Tenant should not damage shared facilities like common stairs or garden.
+14.14: Building access should not be blocked unfairly by landlord.
+14.15: Harassment through security guards or staff is improper.
+15.1: Major structural repairs are usually the landlord's responsibility.
+15.2: Tenant should inform landlord about damage quickly.
+15.3: Small daily-use damage may be tenant's responsibility.
+15.4: Water leakage issues should be repaired promptly.
+15.5: Dangerous electrical wiring should be repaired.
+15.6: Unsafe property conditions can become legal issues.
+15.7: Tenant should not intentionally damage the property.
+15.8: Landlord should not ignore serious repair problems.
+15.9: Repair disputes may be decided by Rent Officer or CDA.
+15.10: Tenant may seek reimbursement for emergency repairs in some legal situations.
+15.11: Property should remain livable and safe.
+15.12: Health and safety risks should not be ignored by landlord.
+17.1: A tenant cannot be removed forcefully without legal process.
+17.2: A landlord should follow legal eviction procedure.
+17.3: Non-payment of rent can become a ground for eviction.
+17.4: Serious violation of agreement terms can become a ground for eviction.
+17.5: Illegal use of property (like drugs or banned business) can become a ground for eviction.
+17.6: Property damage by tenant can become a ground for eviction.
+17.7: Subletting without landlord's permission may create legal problems.
+17.8: Landlord should usually provide notice before starting eviction case.
+17.9: Locking tenant outside without court order is improper.
+17.10: Throwing out tenant's belongings illegally is improper.
+17.11: Police action usually requires a legal court order.
+17.12: Court orders are important in eviction matters.
+17.13: Tenant has the right to defend the case before Rent Officer.
+17.14: Fake eviction threats should not be used by landlord.
+17.15: Landlord's personal need (for himself or family) can become a legal ground in some cases.
+17.16: Expired tenancy can still require legal eviction procedure.
+17.17: Tenant should cooperate after final legal eviction order.
+17.18: Illegal occupation after eviction order can create more legal trouble.
+17.19: Eviction disputes are handled by Rent Officer.
+17.20: Both parties should keep all documents and notices safely.
+18.1: Notice periods should follow what the agreement says.
+18.2: Written notice is safer and stronger than verbal notice.
+18.3: Tenants should give written notice before vacating if agreement requires.
+18.4: Landlords should give written notice before demanding vacation.
+18.5: Proper dates (start and end) should be mentioned in notices.
+18.6: WhatsApp messages alone may create proof problems in court.
+18.7: Email or signed written notice is stronger evidence.
+18.8: Copies of all notices should be saved by both parties.
+18.9: Last-minute forced eviction attempts can be challenged legally.
+18.10: Disputes about notice (whether it was given or not) can go to court.
+19.1: Tenant should be informed if property ownership changes.
+19.2: New owner should provide proof of ownership to tenant.
+19.3: Existing tenancy may continue after ownership transfer.
+19.4: Tenant should know where to pay future rent after transfer.
+19.5: Fake ownership claims should be verified carefully by tenant.
+19.6: Tenant should not pay rent to unknown persons without written proof.
+20.1: Tenant should use the property peacefully.
+20.2: Tenant should not damage property intentionally.
+20.3: Tenant should follow all agreement conditions.
+20.4: Tenant should not use residential property for illegal business.
+20.5: Illegal activities inside rented property can create criminal issues.
+20.6: Tenant should respect neighbors.
+20.7: Excessive disturbance may create complaints and eviction grounds.
+20.8: Tenant should not make major changes (like breaking walls) without permission.
+20.9: Tenant should return property in reasonable condition.
+20.10: Tenant should clear all dues before leaving.
+20.11: Tenant should return all keys after vacating.
+20.12: Tenant should not occupy property after legal eviction order.
+21.1: Landlord should respect tenant privacy.
+21.2: Landlord should not enter without permission unnecessarily.
+21.3: Landlord should not threaten tenant illegally.
+21.4: Landlord should provide agreed facilities.
+21.5: Landlord should maintain property ownership documents.
+21.6: Landlord should not make false accusations against tenant.
+21.7: Landlord should handle disputes legally, not with force.
+21.8: Landlord should not force tenant to leave suddenly without notice.
+21.9: Landlord should return deposit fairly after deductions.
+21.10: Landlord should keep agreement records safely.
+21.11: Landlord should provide honest information about property before renting.
+21.12: Landlord should not hide major property defects (like leakage, termites).
+22.1: Rent Officer handles many rental disputes in Islamabad.
+22.2: Both parties can file cases before Rent Officer.
+22.3: Written agreements are the most important evidence.
+22.4: Payment receipts are important evidence.
+22.5: Witnesses may help during disputes.
+22.6: Fake evidence can create legal penalties.
+22.7: Court orders should be followed by both parties.
+22.8: Appeals may be filed to District Judge in some cases.
+22.9: Delaying tactics can increase legal costs.
+22.10: Both parties should stay respectful during proceedings.
+22.11: Frivolous or fake cases may lead to penalties (Rs.5,000 to Rs.10,000).
+22.12: False allegations can damage a case.
+23.1: Tenant can challenge illegal eviction in court.
+23.2: Landlord can recover unpaid rent through legal process.
+23.3: Rent Officer decisions should be followed.
+23.4: Fake tenancy claims can create legal penalties.
+23.5: Forged agreements are illegal.
+23.6: Property disputes may delay rental cases.
+23.7: Both parties should attend hearings on time.
+23.8: Ignoring court notices can harm the case.
+23.9: Legal notices should be preserved safely.
+23.10: Tenancy evidence should not be destroyed.
+24.1: Tenant should not rent the property to another person without permission.
+24.2: Unauthorized subletting may become a ground for eviction.
+24.3: Landlord may legally object to unknown occupants.
+24.4: Sharing property with others should follow agreement rules.
+24.5: Commercial subletting without approval can create disputes.
+24.6: Tenant remains responsible for property damage even after subletting.
+24.7: Hidden subtenants may create legal complications.
+24.8: Landlord should clearly mention subletting policy in agreement.
+25.1: Commercial tenants should follow business laws.
+25.2: Illegal businesses cannot operate in rented property.
+25.3: Commercial rent disputes can also go to Rent Officer.
+25.4: Business activities should not damage the property.
+25.5: Shop tenants should follow market regulations.
+25.6: Commercial utility charges should be clearly explained.
+25.7: Commercial agreements should clearly mention tax responsibilities.
+25.8: Landlord should not illegally seal business premises.
+25.9: Commercial eviction also requires legal procedure.
+25.10: Business inventory should not be removed illegally by landlord.
+26.1: Landlord should not threaten tenant physically.
+26.2: Tenant should not threaten landlord physically.
+26.3: Harassment through repeated disturbance is improper.
+26.4: Recording fake complaints can create legal problems.
+26.5: Property should not be used for criminal activity.
+26.6: Illegal surveillance inside rented property may violate privacy.
+26.7: Landlord should not publicly insult tenant.
+26.8: Tenant should not damage landlord reputation with false claims.
+26.9: Neighbors should not be disturbed intentionally.
+26.10: Security staff should not harass tenants unfairly.
+27.1: Tenant should vacate property on agreed date unless extended.
+27.2: Extension of tenancy should preferably be in writing.
+27.3: Final inspection should be done before vacating.
+27.4: Utility bills should be cleared before leaving.
+27.5: Keys should be returned to landlord.
+27.6: Tenant belongings should be removed after tenancy ends.
+27.7: Remaining items may create disputes later.
+27.8: Deposit settlement should be discussed clearly.
+27.9: Property photos can help avoid false damage claims.
+27.10: Both parties should sign a handover confirmation if possible.
+28.1: Lock changing without legal process may be illegal.
+28.2: Disconnecting utilities to force vacancy may be challenged.
+28.3: Throwing out tenant property without court order may be illegal.
+28.4: Physical force should not be used during disputes.
+28.5: Threatening messages may become legal evidence.
+28.6: Fake police threats should not be used.
+28.7: Tenant cannot be forced to leave overnight without procedure.
+28.8: Harassment to increase rent may be challenged legally.
+28.9: Forced signatures under pressure may be disputed in court.
+28.10: Illegal eviction attempts can weaken landlord case in court.
+29.1: Signed agreements are strong evidence.
+29.2: Payment receipts should be stored safely.
+29.3: WhatsApp chats may help as supporting evidence.
+29.4: Audio recordings may create privacy issues in some situations.
+29.5: Property photos before move-in are useful evidence.
+29.6: Witnesses may support tenancy claims.
+29.7: Fake receipts can create criminal issues.
+29.8: Edited screenshots may be challenged in court.
+29.9: Email communication can help during disputes.
+29.10: Both parties should keep utility payment proof.
+30.1: A clause saying landlord can evict anytime without process may be unfair.
+30.2: A clause allowing unlimited rent increase may be challenged.
+30.3: A clause saying deposit will never be returned may be unfair.
+30.4: A clause allowing utility disconnection without reason may be unfair.
+30.5: A clause allowing landlord to enter anytime may violate privacy.
+30.6: A clause forcing tenant to pay unknown future charges may be unfair.
+30.7: A clause removing all landlord responsibility may be unfair.
+30.8: A clause allowing forceful eviction may be illegal.
+30.9: A clause preventing legal complaint rights may be problematic.
+30.10: A clause allowing seizure of tenant belongings without order may be improper.
+30.11: A clause demanding extra cash outside agreement should be questioned.
+30.12: A clause hiding utility formulas may create disputes.
+30.13: A clause banning guests completely may be unreasonable.
+30.14: A clause forcing repaint charges without damage may be unfair.
+30.15: A clause forcing full property repair costs on tenant may be unfair.
+31.1: A clause allowing eviction without notice may be unfair.
+31.2: A clause banning all visitors may be unreasonable.
+31.3: A clause forcing tenant to pay all future repairs may be unfair.
+31.4: A clause removing landlord repair responsibility completely may be unfair.
+31.5: A clause allowing deposit seizure without proof may be unfair.
+31.6: A clause allowing unlimited inspections may violate privacy.
+31.7: A clause forcing payment in foreign currency without agreement may create disputes.
+31.8: A clause preventing court action rights may be problematic.
+31.9: A clause allowing arbitrary fines may be challenged.
+31.10: A clause hiding maintenance calculations may create disputes.
+40.1: Always verify property ownership before paying advance.
+40.2: Always keep payment screenshots or receipts.
+40.3: Always keep signed agreement copies.
+40.4: Avoid cash payments without any proof.
+40.5: Take property photos before moving in for evidence.
+40.6: Record meter readings (electricity, gas) on move-in day.
+40.7: Read all clauses carefully before signing.
+40.8: Never sign blank papers.
+40.9: Keep communication records (emails, messages).
+40.10: Ask for written receipts for every payment.
+40.11: Verify utility dues (no pending bills) before vacating.
+40.12: Keep evidence of property condition while leaving (photos/video).
+40.13: Avoid verbal-only agreements.
+40.14: Ask clearly about maintenance responsibility before signing.
+40.15: Clarify notice period before renting.
+40.16: Clarify guest and parking rules in advance.
+40.17: Clarify generator and maintenance charges.
+40.18: Clarify internet and service charges.
+40.19: Clarify security deposit return timeline.
+40.20: Keep CNIC copies of both parties if legally appropriate.
+41.1: Verify ownership documents before paying advance rent.
+41.2: Verify whether the property is already disputed in any court.
+41.3: Confirm whether utility bills are cleared before moving in.
+41.4: Avoid paying large cash amounts without proper receipt.
+41.5: Read eviction clauses carefully before signing.
+41.6: Check notice period conditions carefully.
+41.7: Clarify parking rights before renting.
+41.8: Clarify maintenance charges (if any) before agreement.
+41.9: Clarify generator fuel charges before agreement.
+41.10: Clarify internet and cable responsibilities.
+41.11: Clarify guest restrictions before moving in.
+41.12: Clarify pet policies before renting.
+41.13: Clarify painting and renovation responsibilities.
+41.14: Clarify who pays property taxes if commercial property.
+41.15: Clarify business operating timing restrictions.
+41.16: Clarify security guard and service charges.
+41.17: Keep emergency contact details of landlord.
+41.18: Verify identity of property agent or dealer.
+41.19: Avoid verbal-only promises from agents.
+41.20: Always ask for signed receipts after every payment.
