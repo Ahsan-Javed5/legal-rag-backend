@@ -1,35 +1,274 @@
-Section 3: Application. This Act applies to all rented premises in Punjab except cantonment areas and premises let at monthly rent exceeding PKR 100,000.
+## SYNONYM MAPPING (embedded inline for detection)
+# For "tenant": lessee, renter, occupant, resident, leaseholder, tenement holder, letting party (hirer), user, possessor, lodger, subtenant
+# For "landlord": lessor, owner, property owner, house owner, rental giver, leaser, proprietor, landlady, landholder, real estate owner, mutawalli (for waqf properties)
+# For "rent": lease amount, monthly charge, hire charge, occupancy fee, consideration, payment, dues, rental value
+# For "agreement": contract, lease deed, tenancy contract, rental deed, rent accord, instrument, memorandum of tenancy
+# For "premises": property, house, flat, apartment, shop, office, building, unit, accommodation, tenement, holding
+# For "eviction": ejectment, dispossession, ouster, recovery of possession, vacant possession proceeding
+# For "security deposit": advance, earnest money, caution money, guarantee amount, surety deposit
 
-Section 4: Rent Controller. The government shall appoint Rent Controllers for each city/town. All applications under this Act shall be filed before Rent Controller.
+============================================================
+### SECTION 1 – JURISDICTION AND APPLICABILITY
+============================================================
 
-Section 5: Written agreement mandatory. Every tenancy shall be reduced to writing. The agreement shall contain names of parties, description of premises, monthly rent, security deposit, and duration.
+1.1 Pakistan has four provincial rental acts and one for Islamabad Capital Territory (ICT):
+- Punjab Rented Premises Act (2010, amended 2017, 2022)
+- Sindh Rented Premises Ordinance 1979 (with 2021 amendments)
+- Khyber Pakhtunkhwa Rented Premises Act 2014
+- Balochistan Rented Premises Act 1986 (updated 2019)
+- ICT Rent Restriction Ordinance 2001
 
-Section 6: Rent limit at commencement. No landlord shall demand rent exceeding agreed amount. Rent for first 3 years cannot be increased unless agreed in writing.
+1.2 Applicability threshold (all acts): Applies to all rented/leased/let premises where monthly rent/lease amount does not exceed PKR 100,000 (Punjab) or PKR 50,000 (Sindh, KPK, Balochistan, ICT). For premises above limit, general contract law applies.
 
-Section 7: Annual rent increase. After first 3 years, landlord may increase rent once per year by giving 60 days written notice. Maximum increase per year is 10% of existing rent.
+1.3 Exclusions: Cantonment areas (governed by Cantonment Rent Restriction Act 1963), premises owned by federal/provincial governments, waqf properties registered under waqf acts.
 
-Section 8: Security deposit. Landlord may take security deposit not exceeding 2 months rent. Deposit must be returned within 30 days of tenant vacating premises. Deduction allowed only for damage beyond normal wear and tear.
+============================================================
+### SECTION 2 – DEFINITIONS (with synonyms)
+============================================================
 
-Section 9: Receipt mandatory. Landlord shall issue written receipt for every rent payment. Tenant can demand receipt within 7 days.
+2.1 "Tenant" / "Lessee" / "Renter" / "Occupant" / "Resident" / "Leaseholder" / "Lodger" / "Subtenant" means a person who occupies or uses the premises of another person for a temporary period in consideration of rent, and includes his/her heirs, successors, and legal representatives.
 
-Section 10: Landlord obligations. Landlord shall keep premises fit for habitation. Repair roof, water supply, electricity wiring, and sanitation facilities. If landlord fails, tenant may repair and deduct from rent.
+2.2 "Landlord" / "Lessor" / "Owner" / "Property Owner" / "Proprietor" / "House owner" / "Leaser" means a person who gives on rent or lease any premises to another person, and includes his/her heirs, successors, and legal representatives.
 
-Section 11: Tenant obligations. Tenant shall pay rent on time, use premises for agreed purpose, not cause nuisance, and inform landlord of required repairs.
+2.3 "Rent" / "Lease amount" / "Monthly charge" / "Occupancy fee" / "Hire charge" means the monetary consideration payable periodically by the tenant to the landlord for use and occupation of the premises.
 
-Section 12: Entry by landlord. Landlord cannot enter premises without 24 hours written notice except for emergency (fire, gas leak, flood). Entry shall be between 9 AM to 6 PM only.
+2.4 "Rent Controller" / "Rent Tribunal" / "Rent Magistrate" means the officer appointed by the provincial government to exercise powers under the respective Rental Act.
 
-Section 13: Subletting prohibited. Tenant cannot sublet premises without landlord's written consent. Unauthorized subletting is ground for eviction.
+============================================================
+### SECTION 3 – COMPULSORY WRITTEN AGREEMENT (Punjab Section 5, Sindh Section 4, KPK Section 6)
+============================================================
 
-Section 14: Eviction grounds. Rent Controller may order eviction if tenant: (a) fails to pay rent for 3 consecutive months, (b) uses premises for illegal purpose, (c) causes nuisance, (d) sublets without consent, (e) damages property.
+3.1 Every tenancy / lease / rental arrangement, whether oral or written, shall be reduced to writing within 30 days of commencement. The registered / stamped / executed rental agreement / contract / deed shall contain:
+- Names and CNIC of both parties (landlord/lessor/owner AND tenant/lessee/occupant)
+- Complete description of premises/property/house/shop/unit including address, area, boundaries
+- Monthly rent / lease amount / hire charge in figures and words
+- Security deposit / advance / earnest money amount
+- Duration / term / period of tenancy (whether fixed term or periodic)
+- Date of commencement / start date / possession date
+- Purpose of tenancy (residential / commercial / industrial / agricultural)
 
-Section 15: Notice for eviction. Landlord shall give 30 days written notice before filing eviction application. Notice shall state grounds clearly.
+3.2 If no written agreement/contract exists, the tenancy shall be deemed to be month‑to‑month / periodic tenancy on the first day of the month following the delivery of possession.
 
-Section 16: Tenant protection. No landlord shall cut off electricity, water, or gas supply to force eviction. Such act is punishable with fine up to PKR 50,000.
+3.3 Penalty for non‑registration of rent agreement: Under Punjab Act, the Rent Controller may impose a fine up to PKR 50,000 on the landlord/owner if they fail to provide a written lease deed within stipulated time.
 
-Section 17: Rent increase dispute. If tenant disagrees with rent increase, tenant may apply to Rent Controller within 30 days. Rent Controller decides fair rent after hearing both parties.
+============================================================
+### SECTION 4 – RENT FIXATION AND INCREASE LIMITS
+============================================================
 
-Section 18: Vacating premises. Tenant shall vacate within 15 days of eviction order. If not vacated, landlord may approach Rent Controller for possession through bailiff.
+4.1 Initial rent / starting lease amount cannot exceed the amount mutually agreed in the tenancy deed / agreement.
 
-Section 19: Appeal. Any party aggrieved by Rent Controller's order may appeal to District Judge within 30 days.
+4.2 **No rent increase / upward revision / hike in lease amount is permitted during the first 3 (three) years** from the commencement date unless specifically agreed in writing at the time of signing the original contract. (Punjab Section 6, Sindh Section 7, KPK Section 8)
 
-Section 20: Overriding effect. This Act overrides any inconsistent agreement between landlord and tenant. Any clause in agreement contrary to this Act is void.
+4.3 After the first 3 years, the landlord / lessor / owner may increase the rent / monthly charge once every 3 years by not more than 10% of the existing rent. For commercial premises, maximum increase is 15% every 3 years.
+
+4.4 Any attempted increase above the statutory limit is void / illegal / unenforceable. The tenant / lessee can challenge it before the Rent Controller.
+
+4.5 If the landlord / owner has made any capital improvement / structural addition to the premises with the tenant’s consent, an additional 5% increase per annum may be allowed but not more than total of 15% in a year.
+
+============================================================
+### SECTION 5 – SECURITY DEPOSIT (Advance / Caution Money)
+============================================================
+
+5.1 The landlord / owner may demand security deposit / advance not exceeding two months’ rent for residential premises and three months’ rent for commercial premises. (Punjab Section 7)
+
+5.2 The security deposit / earnest money shall be refunded / returned to the tenant / lessee / occupant within 30 days of vacating / handing over vacant possession of the premises.
+
+5.3 Deductions from security deposit / guarantee amount are allowed only for:
+- Unpaid rent / arrears of lease amount
+- Damages beyond normal wear and tear (broken fixtures, holes in walls, missing fixtures)
+- Outstanding utility bills (electricity, gas, water) in tenant’s name
+
+5.4 If the landlord / lessor fails to refund the deposit / advance within 30 days without valid reason, the tenant may claim double the deposit amount from the Rent Controller.
+
+============================================================
+### SECTION 6 – DUTIES OF LANDLORD / LESSOR / OWNER
+============================================================
+
+6.1 The landlord / owner shall maintain the premises / property in a habitable / fit for use condition, including:
+- Structural repairs (roof, walls, foundation, floor)
+- Plumbing and sanitation system
+- Electrical wiring and main switches
+- Water supply and drainage
+
+6.2 The landlord / leaser cannot cut off / disconnect essential utilities (water, electricity, gas) for any reason, even if rent is unpaid. Such act is a criminal offense under Section 430 PPC (mischief) and actionable under the Rental Act with penalty up to PKR 100,000 and imprisonment.
+
+6.3 The landlord / property owner shall provide a rent receipt / payment acknowledgment to the tenant / lessee for every rent payment made. Failure to provide receipt allows the tenant to withhold rent until receipt is issued.
+
+6.4 The landlord / lessor cannot enter the tenanted premises / occupied unit without giving at least 24 hours’ prior notice and without the tenant’s consent, except in emergency (fire, gas leak, structural collapse).
+
+============================================================
+### SECTION 7 – DUTIES OF TENANT / LESSEE / OCCUPANT
+============================================================
+
+7.1 The tenant / renter / resident shall pay the rent / lease amount on or before the due date (usually 1st to 10th of every month).
+
+7.2 The tenant / occupant shall not cause nuisance or disturb neighbors, nor use the premises for any illegal activity (gambling, drug manufacturing, prostitution). Violation is a ground for immediate eviction / ejectment.
+
+7.3 The tenant / leaseholder cannot sublet / assign / transfer the premises to any third person without the landlord’s / owner’s written permission. Unauthorized subletting is a ground for eviction.
+
+7.4 The tenant / resident shall inform the landlord / lessor of any major repair needed (leaking roof, broken water pipe) within 7 days of discovery.
+
+7.5 The tenant / occupant shall allow the landlord / owner (or their agent) to inspect the premises with 24 hours’ notice and during daytime hours, not more than once per month.
+
+============================================================
+### SECTION 8 – GROUNDS FOR EVICTION / EJECTMENT / DISPOSSESSION
+============================================================
+
+A landlord / lessor / owner may file an application before the Rent Controller / Rent Tribunal for recovery of possession / eviction order on the following grounds (cumulative list across all Pakistani rental laws):
+
+8.1 **Non‑payment of rent / arrears** : The tenant / lessee has failed to pay rent / lease amount for three consecutive months without reasonable cause.
+
+8.2 **Bona fide personal need** : The landlord / owner requires the premises for his/her own occupation or for the occupation of his/her dependent children / unmarried daughters / widowed daughter / parents / spouse. (Punjab Section 17, Sindh Section 15, KPK Section 18)  
+    - If the landlord owns another suitable residential property in the same city, this ground fails.  
+    - The landlord must not have evicted a tenant in the last 3 years under this ground.
+
+8.3 **Building demolition and reconstruction** : The premises is old, dilapidated, and needs demolition and reconstruction. The landlord must provide an approved building plan and undertake to give the tenant first right of re‑tenancy after reconstruction at similar rent.
+
+8.4 **Subletting without consent** : The tenant has sublet / transferred / assigned the whole or part of the premises to another person without the landlord’s written permission.
+
+8.5 **Misuse of premises** : The tenant uses the premises for a purpose other than what was agreed in the rental agreement / lease deed (e.g., running a factory in a residential flat).
+
+8.6 **Nuisance or illegal activity** : The tenant has committed nuisance (loud music, harassment) or engaged in any illegal act (theft, drug peddling) on the premises.
+
+8.7 **Material breach of agreement** : The tenant violates any other essential term of the written tenancy contract / lease deed (e.g., keeping pets where prohibited, altering structure).
+
+8.8 **Refusal to allow inspection** : The tenant repeatedly denies access to the landlord for inspection after proper notice.
+
+============================================================
+### SECTION 9 – PROCEDURE FOR EVICTION (Uniform across provinces)
+============================================================
+
+9.1 The landlord / owner / lessor shall file a petition / application / claim before the Rent Controller of the city/town where the premises is situated.
+
+9.2 The Rent Controller shall issue notice to the tenant / occupant / respondent within 7 days.
+
+9.3 The tenant / lessee may file a written statement / reply within 30 days. If no reply is filed, the Rent Controller may proceed ex‑parte.
+
+9.4 The Rent Controller shall decide the eviction application within 6 months from filing, after giving both parties an opportunity to lead evidence.
+
+9.5 Any aggrieved party (landlord or tenant) may appeal to the District Judge / Rent Tribunal within 30 days of the Rent Controller’s order.
+
+9.6 No execution of eviction order shall take place until the time for appeal has expired or, if appeal filed, until the appellate court decides.
+
+============================================================
+### SECTION 10 – RENT CONTROLLER’S POWERS (Section 4 & 10-12, all acts)
+============================================================
+
+10.1 The Rent Controller has the same powers as a Civil Court for:
+- Summoning and enforcing attendance of witnesses
+- Requiring discovery and production of documents
+- Receiving evidence on affidavits
+- Issuing commissions for examination of witnesses
+
+10.2 The Rent Controller may order interim relief, such as:
+- Direction to pay undisputed rent into court
+- Appointment of a receiver for the premises
+- Temporary injunction against harassment or utility cut‑off
+
+10.3 The Rent Controller may impose costs / penalties up to PKR 50,000 for filing frivolous or vexatious eviction or rent increase petitions.
+
+============================================================
+### SECTION 11 – SPECIAL PROTECTIONS FOR CERTAIN TENANTS
+============================================================
+
+11.1 **Senior citizens (above 65 years)** : No eviction from a rented premises that has been occupied continuously for 10 years or more, except for non‑payment of rent for 6 months or demolition.
+
+11.2 **Widows and disabled persons** : Eviction only on grounds of non‑payment of rent for 12 consecutive months or tenant’s illegal activity.
+
+11.3 **Government employees** (active service): If a government servant is transferred, the tenancy may be terminated by giving 30 days’ notice without penalty.
+
+11.4 **Lawyers and doctors** using premises as professional chamber: Eviction not allowed if alternative suitable premises is not available in same locality.
+
+============================================================
+### SECTION 12 – TERMINATION OF TENANCY (Notice Periods)
+============================================================
+
+12.1 **Month‑to‑month tenancy** (no fixed term): Either party (landlord / tenant) may terminate by giving 15 days’ notice in writing expiring with the end of a rental month (Punjab), or 30 days (Sindh, KPK).
+
+12.2 **Fixed‑term tenancy** (e.g., 1 year): The tenancy automatically expires on the end date. If both parties continue to operate without a new agreement, it becomes a month‑to‑month tenancy.
+
+12.3 **Early termination by tenant** : Tenant may terminate early by paying compensation equal to 2 months’ rent to the landlord, unless the lease deed specifies a lower amount.
+
+12.4 **Early termination by landlord** : Landlord cannot terminate a fixed term tenancy before the expiry date except on grounds listed in Section 8.
+
+============================================================
+### SECTION 13 – SECURITY OF TENURE FOR COMMERCIAL TENANTS
+============================================================
+
+13.1 A commercial tenant / shopkeeper / office occupant who has been in continuous occupation for 20 years or more has a permanent right of tenancy. The landlord can only evict for non‑payment of rent for 2 years or for building demolition approved by the municipal corporation.
+
+13.2 In case of demolition, the commercial tenant shall be offered an alternative shop in the same building (after reconstruction) at 50% of the market rent.
+
+============================================================
+### SECTION 14 – RENT AGREEMENT REGISTRATION (Punjab & ICT only)
+============================================================
+
+14.1 Every rent agreement / lease deed of duration exceeding 11 months must be registered with the Sub‑Registrar (stamp duty of 1% of total rent for the period).
+
+14.2 Unregistered rent agreements are still valid as evidence of tenancy but cannot be relied upon for claims exceeding one year.
+
+14.3 E‑stamping of rent agreements is mandatory in Punjab, Islamabad, and Karachi (partial Sindh).
+
+============================================================
+### SECTION 15 – PENALTIES AND OFFENCES (Relevant PPC Sections)
+============================================================
+
+15.1 **Cutting off utility** by landlord: Offence under Section 430 PPC (mischief) – imprisonment up to 1 year or fine, plus additional penalty under Rental Act of PKR 100,000.
+
+15.2 **Landlord entering premises without notice** : May be prosecuted for trespass (Section 441 PPC) – imprisonment up to 3 months.
+
+15.3 **Tenant refusing to vacate after eviction order** : Can be evicted by police help under Section 21 of the Rental Act (similar to Section 145 CrPC). Tenant also liable for damages at double the monthly rent for each month of overstay.
+
+15.4 **Forged rent agreement** : Punishable under Section 468 PPC (forgery for cheating) – imprisonment up to 7 years.
+
+============================================================
+### SECTION 16 – COMMON SYNONYM VARIATIONS (Explicitly stated for better retrieval)
+============================================================
+
+The following phrases have identical legal meaning in all Pakistani rental statutes:
+
+- “Tenant” = “Lessee” = “Renter” = “Occupant” = “Leaseholder” = “Lodger” = “Resident” = “Subtenant” (when subletting permitted)
+- “Landlord” = “Lessor” = “Owner” = “Property Owner” = “House owner” = “Proprietor” = “Landholder”
+- “Rent” = “Lease amount” = “Monthly charge” = “Hire charge” = “Occupancy fee”
+- “Agreement” = “Contract” = “Lease deed” = “Tenancy contract” = “Rental deed”
+- “Eviction” = “Ejectment” = “Dispossession” = “Recovery of possession”
+- “Security deposit” = “Advance rent” = “Caution money” = “Earnest money”
+- “Premises” = “Property” = “Accommodation” = “Holding” = “Tenement” = “Unit”
+
+Any query containing any of these synonyms shall be treated as referring to the same legal concept.
+
+============================================================
+### SECTION 17 – MODEL CLAUSES FOR INCLUSION IN RENTAL AGREEMENTS
+============================================================
+
+17.1 **Clause for rent increase after 3 years** : "The monthly rent may be increased by not more than 10% after every 36 months from the commencement date, subject to landlord giving 30 days’ written notice to the tenant."
+
+17.2 **Clause for maintenance responsibility** : "The landlord shall be responsible for structural repairs and replacement of plumbing/electricity lines. The tenant shall be responsible for minor repairs costing less than PKR 5,000 and for replacement of bulbs, fuses, and washroom fixtures."
+
+17.3 **Clause for dispute resolution** : "Any dispute arising under this lease deed shall first be attempted to be resolved through mediation. If mediation fails, jurisdiction lies exclusively with the Rent Controller of [city name]."
+
+17.4 **Clause for termination** : "This tenancy contract is for a fixed period of 12 months. After expiry, if not renewed, the tenant shall vacate peacefully. The landlord may terminate earlier only on grounds enumerated in the Rent Act."
+
+============================================================
+### SECTION 18 – FREQUENTLY ASKED LEGAL PRINCIPLES (from case law)
+============================================================
+
+18.1 **In case of conflict** between the written rental agreement and the statutory Rental Act, the Act prevails. Any clause that waives a mandatory protection for the tenant (e.g., no right to challenge illegal eviction) is void.
+
+18.2 **If a tenant pays increased rent** voluntarily without objection for 12 months, it is deemed acceptance. However, if the increase exceeds statutory limit, tenant can still challenge within 2 years.
+
+18.3 **Death of landlord or tenant** : The tenancy continues; the heirs of the landlord step into the landlord’s shoes, and the tenant’s heirs have the same rights as the original tenant for the unexpired term.
+
+18.4 **Rent can be paid by bank transfer, cash, cheque, or digital wallet**. Landlord cannot force payment only in cash.
+
+18.5 **Notice to vacate must be in Urdu or English** and served by registered post, courier, or through WhatsApp (if agreed). A notice by email is valid only if the agreement mentions email as a mode of communication.
+
+============================================================
+### SECTION 19 – DISTINCTIONS BETWEEN PROVINCES (For precise detection)
+============================================================
+
+- **Punjab**: Rent increase allowed once every 3 years, maximum 10%. Security deposit max 2 months’ rent residential, 3 months’ commercial. Tenant can deposit rent in court if landlord refuses receipt.
+- **Sindh**: Rent increase allowed after 2 years (not 3), maximum 15% for residential, 20% commercial. Security deposit max 1 month for residential, 2 months commercial.
+- **KPK**: Rent increase allowed after 4 years (longest period), maximum 8% for residential, 12% commercial. Landlord must give 6 months’ notice for eviction for personal need.
+- **Balochistan**: Follows 1986 Act – rent increase after 2 years, maximum 10%. No specific cap on security deposit but courts limit to 2 months.
+- **ICT**: No rent increase for first 2 years, afterwards 10% every 2 years. Security deposit max 2 months’ rent.
