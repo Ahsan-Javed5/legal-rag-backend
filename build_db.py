@@ -4,8 +4,14 @@ import re
 
 DB_PATH = "/workspace/chroma_db"
 
+# =========================
+# LOAD EMBEDDING MODEL
+# =========================
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
+# =========================
+# LOAD CHROMADB
+# =========================
 db = chromadb.PersistentClient(path=DB_PATH)
 
 # DELETE OLD COLLECTION
@@ -23,44 +29,49 @@ with open("rental_acts.txt", "r", encoding="utf-8") as f:
     text = f.read()
 
 # =========================
-# BETTER CHUNKING
+# CHUNKING
 # =========================
-sections = re.split(
-    r'(Section\s+\d+.*?:|SECTION\s+\d+.*?:)',
+# Split by big section separators
+raw_chunks = re.split(
+    r'={10,}|###\s+SECTION',
     text
 )
 
 chunks = []
 
-current = ""
+for chunk in raw_chunks:
 
-for part in sections:
+    chunk = chunk.strip()
 
-    part = part.strip()
-
-    if not part:
+    if not chunk:
         continue
 
-    if re.match(r'(Section|SECTION)\s+\d+', part):
+    # Remove very small chunks
+    if len(chunk) < 100:
+        continue
 
-        if current:
-            chunks.append(current.strip())
+    # If chunk too large, split further
+    if len(chunk) > 2000:
 
-        current = part
+        sub_chunks = re.split(r'\n\s*\n+', chunk)
+
+        for sub in sub_chunks:
+
+            sub = sub.strip()
+
+            if 100 < len(sub) < 2000:
+                chunks.append(sub)
 
     else:
-        current += "\n" + part
+        chunks.append(chunk)
 
-if current:
-    chunks.append(current.strip())
+# Remove duplicates
+chunks = list(dict.fromkeys(chunks))
 
-# CLEAN
-chunks = [
-    c for c in chunks
-    if len(c) > 80
-]
-
+# DEBUG
 print("Total chunks:", len(chunks))
+print("\nFIRST CHUNK PREVIEW:\n")
+print(chunks[0][:500])
 
 # =========================
 # STORE EMBEDDINGS
@@ -75,8 +86,9 @@ for i, chunk in enumerate(chunks):
         documents=[chunk],
         metadatas=[{
             "source": "pakistani_rental_law",
-            "chunk_id": i
+            "chunk_id": i,
+            "length": len(chunk)
         }]
     )
 
-print("Database built successfully.")
+print(f"\nDatabase built successfully with {len(chunks)} chunks.")
