@@ -11,7 +11,7 @@ import os
 app = FastAPI()
 
 DB_PATH = "/workspace/chroma_db"
-MODEL_NAME = "meta-llama/Llama-3.2-1B-Instruct"  # Lightweight, ya "mistralai/Mistral-7B-Instruct-v0.3"
+MODEL_NAME = "microsoft/Phi-3-mini-4k-instruct"
 
 # Load embedding model
 embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
