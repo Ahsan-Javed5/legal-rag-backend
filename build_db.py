@@ -10,11 +10,10 @@ DB_PATH = "/workspace/chroma_db"
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
 # =========================
-# LOAD CHROMADB
+# LOAD / RESET CHROMADB
 # =========================
 db = chromadb.PersistentClient(path=DB_PATH)
 
-# DELETE OLD COLLECTION
 try:
     db.delete_collection("laws")
 except:
@@ -23,69 +22,69 @@ except:
 collection = db.create_collection("laws")
 
 # =========================
-# LOAD LAW FILE
+# LOAD LAW FILE (simplified clauses)
 # =========================
 with open("rental_acts.txt", "r", encoding="utf-8") as f:
-    text = f.read()
+    lines = f.readlines()
 
 # =========================
-# CHUNKING
+# CHUNKING: each numbered clause becomes its own chunk
 # =========================
-# Split by big section separators
-raw_chunks = re.split(
-    r'={10,}|###\s+SECTION',
-    text
-)
-
 chunks = []
+current_chunk = ""
 
-for chunk in raw_chunks:
+for line in lines:
+    line = line.strip()
+    if not line:
+        continue                     # skip empty lines
 
-    chunk = chunk.strip()
-
-    if not chunk:
-        continue
-
-    # Remove very small chunks
-    if len(chunk) < 100:
-        continue
-
-    # If chunk too large, split further
-    if len(chunk) > 2000:
-
-        sub_chunks = re.split(r'\n\s*\n+', chunk)
-
-        for sub in sub_chunks:
-
-            sub = sub.strip()
-
-            if 100 < len(sub) < 2000:
-                chunks.append(sub)
-
+    # A clause starts with a pattern like "5.1:" or "10.1:", etc.
+    # We treat each such line as its own chunk.
+    # This way every rule is independent and easy to retrieve.
+    if re.match(r'^\d+\.\d+:', line):
+        if current_chunk:
+            chunks.append(current_chunk)
+            current_chunk = ""
+        current_chunk = line
     else:
-        chunks.append(chunk)
+        # In case a clause spans two lines (unlikely in your clean file)
+        if current_chunk:
+            current_chunk += " " + line
+        else:
+            current_chunk = line
 
-# Remove duplicates
-chunks = list(dict.fromkeys(chunks))
+# Add last chunk
+if current_chunk:
+    chunks.append(current_chunk)
 
-# DEBUG
-print("Total chunks:", len(chunks))
-print("\nFIRST CHUNK PREVIEW:\n")
-print(chunks[0][:500])
+# Remove duplicates (preserve order)
+seen = set()
+unique_chunks = []
+for ch in chunks:
+    if ch not in seen:
+        seen.add(ch)
+        unique_chunks.append(ch)
+
+chunks = unique_chunks
+
+# Debug info
+print(f"Total chunks: {len(chunks)}")
+if chunks:
+    print("\nFirst 3 chunks:\n")
+    for i, ch in enumerate(chunks[:3]):
+        print(f"{i+1}. {ch[:150]}...\n")
 
 # =========================
 # STORE EMBEDDINGS
 # =========================
 for i, chunk in enumerate(chunks):
-
     emb = model.encode(chunk).tolist()
-
     collection.add(
         ids=[f"law_{i}"],
         embeddings=[emb],
         documents=[chunk],
         metadatas=[{
-            "source": "pakistani_rental_law",
+            "source": "islamabad_rent_law_simplified",
             "chunk_id": i,
             "length": len(chunk)
         }]
