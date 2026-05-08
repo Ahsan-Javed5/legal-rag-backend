@@ -6,98 +6,212 @@ import re
 import pypdf
 from io import BytesIO
 from vllm import LLM, SamplingParams
-import os
 
 app = FastAPI()
 
 DB_PATH = "/workspace/chroma_db"
-MODEL_NAME = "microsoft/Phi-3-mini-4k-instruct"
+MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
 
-# Load embedding model
+# =========================
+# LOAD EMBEDDING MODEL
+# =========================
 embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# Load ChromaDB
+# =========================
+# LOAD CHROMADB
+# =========================
 db = chromadb.PersistentClient(path=DB_PATH)
 collection = db.get_or_create_collection("laws")
 
-# Load vLLM (only once at startup)
-print(f"Loading vLLM model: {MODEL_NAME}...")
+# =========================
+# LOAD VLLM
+# =========================
+print(f"Loading vLLM model: {MODEL_NAME}")
+
 try:
-    llm = LLM(model=MODEL_NAME, trust_remote_code=True)
-    sampling_params = SamplingParams(temperature=0, max_tokens=500)
+    llm = LLM(
+        model=MODEL_NAME,
+        trust_remote_code=True,
+        gpu_memory_utilization=0.85,
+        max_model_len=4096
+    )
+
+    sampling_params = SamplingParams(
+        temperature=0,
+        top_p=0.95,
+        max_tokens=300
+    )
+
     print("vLLM loaded successfully.")
+
 except Exception as e:
-    print(f"Warning: vLLM failed to load: {e}")
+    print("vLLM load failed:", e)
     llm = None
 
+
+# =========================
+# REQUEST MODELS
+# =========================
 class Query(BaseModel):
     question: str
+
 
 class Agreement(BaseModel):
     text: str
 
-# ========== PROMPT TEMPLATE (Synonym-Aware) ==========
-SYSTEM_PROMPT = """You are a Pakistani rental law expert. The user may use synonyms like:
-- Tenant = lessee, renter, occupant, resident, leaseholder, lodger
-- Landlord = lessor, owner, proprietor, house owner
-- Rent = lease amount, hire charge, occupancy fee
-- Eviction = ejectment, dispossession
-- Agreement = contract, lease deed
 
-Your task: Analyze the given clause against the retrieved Pakistani rental law.
-Answer in this exact format:
-- Violation: Yes/No
-- Section: (if violation, mention act and section, e.g., "Punjab Act Section 6")
-- Reason: (one sentence explanation)
+# =========================
+# IMPROVED SYSTEM PROMPT
+# =========================
+SYSTEM_PROMPT = """
+You are an expert Pakistani rental law AI assistant.
 
-If no violation: "Compliant"
+The user may describe a rental clause in short form.
+
+Your task:
+1. Determine whether the clause/question violates Pakistani rental law.
+2. Use ONLY the retrieved law context.
+3. Do NOT invent laws or sections.
+4. If the retrieved law is insufficient, say:
+   "Insufficient legal context found."
+
+Return STRICTLY in this format:
+
+Violation: Yes/No
+Section: <Act and section OR N/A>
+Reason: <short explanation>
+
+If compliant:
+Violation: No
+Section: N/A
+Reason: Clause appears compliant with retrieved law.
 """
 
-def call_vllm(prompt: str) -> str:
-    """Call vLLM with prompt, return response"""
+
+# =========================
+# VLLM CALL
+# =========================
+def call_vllm(prompt: str):
+
     if llm is None:
-        return "Error: vLLM not loaded. Please check model availability."
-    
+        return "vLLM not loaded."
+
     try:
         outputs = llm.generate([prompt], sampling_params)
         return outputs[0].outputs[0].text.strip()
-    except Exception as e:
-        return f"vLLM error: {str(e)}"
 
+    except Exception as e:
+        return str(e)
+
+
+# =========================
+# QUERY NORMALIZATION
+# =========================
+def normalize_query(q: str):
+
+    q = q.strip()
+
+    templates = [
+        f"Is this legal under Pakistani rental law: {q}?",
+        f"Does this violate Pakistani tenancy law: {q}?",
+        f"Rental clause: {q}"
+    ]
+
+    return " ".join(templates)
+
+
+# =========================
+# RETRIEVE LAW
+# =========================
+def retrieve_laws(query, n_results=3):
+
+    processed_query = normalize_query(query)
+
+    emb = embedding_model.encode(processed_query).tolist()
+
+    retrieved = collection.query(
+        query_embeddings=[emb],
+        n_results=n_results
+    )
+
+    docs = []
+
+    if retrieved["documents"]:
+        docs = retrieved["documents"][0]
+
+    return docs
+
+
+# =========================
+# ANALYZE SINGLE QUERY
+# =========================
+def analyze_question(question: str):
+
+    laws = retrieve_laws(question)
+
+    combined_laws = "\n\n".join(laws)
+
+    prompt = f"""
+{SYSTEM_PROMPT}
+
+USER QUESTION:
+{question}
+
+RETRIEVED PAKISTANI RENTAL LAW:
+{combined_laws}
+
+Analyze the user question against the law.
+"""
+
+    answer = call_vllm(prompt)
+
+    return {
+        "question": question,
+        "retrieved_laws": laws,
+        "answer": answer
+    }
+
+
+# =========================
+# ANALYZE AGREEMENT
+# =========================
 def analyze_text(text: str):
-    """Split agreement into clauses, retrieve law, analyze with vLLM"""
-    clauses = re.split(r'[.\n]+', text)
-    clauses = [c.strip() for c in clauses if len(c.strip()) > 30]
+
+    clauses = re.split(r'\n|\. ', text)
+
+    clauses = [
+        c.strip()
+        for c in clauses
+        if len(c.strip()) > 40
+    ]
+
     results = []
 
     for i, clause in enumerate(clauses):
-        # 1. Retrieve relevant law from ChromaDB
-        emb = embedding_model.encode(clause).tolist()
-        retrieved = collection.query(
-            query_embeddings=[emb],
-            n_results=1
-        )
-        law_text = retrieved["documents"][0][0] if retrieved["documents"] else "No specific law found in database."
 
-        # 2. Build final prompt
-        user_prompt = f"""Clause from rental agreement:
-"{clause}"
+        laws = retrieve_laws(clause)
 
-Retrieved relevant Pakistani rental law:
-"{law_text}"
+        combined_laws = "\n\n".join(laws)
 
-Based on the above law, analyze the clause."""
+        prompt = f"""
+{SYSTEM_PROMPT}
 
-        final_prompt = f"{SYSTEM_PROMPT}\n\n{user_prompt}"
+CLAUSE:
+{clause}
 
-        # 3. Call vLLM
-        analysis = call_vllm(final_prompt)
+RETRIEVED LAW:
+{combined_laws}
+
+Analyze the clause.
+"""
+
+        analysis = call_vllm(prompt)
 
         results.append({
-            "clause_num": i + 1,
-            "clause_text": clause[:300],
-            "retrieved_law_preview": law_text[:200],
-            "analysis": analysis
+            "clause_number": i + 1,
+            "clause": clause,
+            "analysis": analysis,
+            "retrieved_laws": laws
         })
 
     return {
@@ -105,48 +219,47 @@ Based on the above law, analyze the clause."""
         "results": results
     }
 
-# ========== API ENDPOINTS ==========
+
+# =========================
+# ENDPOINTS
+# =========================
 @app.post("/ask")
 def ask(query: Query):
-    """Simple question-answering endpoint"""
-    emb = embedding_model.encode(query.question).tolist()
-    retrieved = collection.query(query_embeddings=[emb], n_results=1)
-    law_text = retrieved["documents"][0][0] if retrieved["documents"] else "No match found"
-    
-    final_prompt = f"{SYSTEM_PROMPT}\n\nUser question: {query.question}\n\nRelevant law: {law_text}\n\nAnswer the question based on the law."
-    
-    answer = call_vllm(final_prompt)
-    
-    return {
-        "question": query.question,
-        "answer": answer,
-        "retrieved_law": law_text[:500]
-    }
+
+    return analyze_question(query.question)
+
 
 @app.post("/analyze-agreement")
 def analyze_agreement(agreement: Agreement):
-    """Analyze full rental agreement text"""
+
     return analyze_text(agreement.text)
+
 
 @app.post("/analyze-pdf")
 async def analyze_pdf(file: UploadFile = File(...)):
-    """Upload and analyze a PDF rental agreement"""
+
     contents = await file.read()
+
     pdf = pypdf.PdfReader(BytesIO(contents))
-    
+
     text = ""
+
     for page in pdf.pages:
+
         page_text = page.extract_text()
+
         if page_text:
-            text += page_text
-    
+            text += page_text + "\n"
+
     return analyze_text(text)
 
+
 @app.get("/health")
-def health_check():
+def health():
+
     return {
         "status": "running",
-        "vllm_loaded": llm is not None,
-        "chroma_collection_count": collection.count(),
-        "model": MODEL_NAME
+        "model": MODEL_NAME,
+        "laws_count": collection.count(),
+        "vllm_loaded": llm is not None
     }
