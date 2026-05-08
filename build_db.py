@@ -9,7 +9,7 @@ model = SentenceTransformer('all-MiniLM-L6-v2')
 db = chromadb.PersistentClient(path=DB_PATH)
 collection = db.get_or_create_collection("laws")
 
-with open("pakistan_rental_laws_consolidated.txt", "r", encoding="utf-8") as f:
+with open("rental_acts.txt", "r", encoding="utf-8") as f:
     text = f.read()
 
 # Split by double newlines or sections (### or =====)
