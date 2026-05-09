@@ -191,15 +191,18 @@ Do not repeat anything.
 
 
 def split_agreement(text: str):
-    clauses = re.split(
-        r"\n+|\.\s+",
-        text
+    pattern = r"(?:\d+\.\s)(.*?)(?=\n\d+\.|\Z)"
+
+    matches = re.findall(
+        pattern,
+        text,
+        re.DOTALL
     )
 
     cleaned = []
 
-    for clause in clauses:
-        clause = clause.strip()
+    for clause in matches:
+        clause = clean_text(clause)
 
         if len(clause) >= 20:
             cleaned.append(clause)
