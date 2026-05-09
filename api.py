@@ -74,7 +74,7 @@ Relevant Clauses:
 - clause number
 
 Explanation:
-Short explanation in plain English.
+Short precis explanation in plain English.
 """.strip()
 
 
