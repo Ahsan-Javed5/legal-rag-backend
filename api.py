@@ -191,10 +191,8 @@ Do not repeat anything.
 
 
 def split_agreement(text: str):
-    text = clean_text(text)
-
     clauses = re.split(
-        r"(?i)(?:\n|\. )",
+        r"\n+|\.\s+",
         text
     )
 
@@ -203,7 +201,7 @@ def split_agreement(text: str):
     for clause in clauses:
         clause = clause.strip()
 
-        if len(clause) >= 40:
+        if len(clause) >= 20:
             cleaned.append(clause)
 
     return cleaned
