@@ -1,117 +1,263 @@
 from fastapi import FastAPI, File, UploadFile
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
-import chromadb
-import re
-import pypdf
 from io import BytesIO
 from vllm import LLM, SamplingParams
+import chromadb
+import pypdf
+import re
 
 app = FastAPI()
 
 DB_PATH = "/workspace/chroma_db"
+COLLECTION_NAME = "laws"
 MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
 
-embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
-db = chromadb.PersistentClient(path=DB_PATH)
-collection = db.get_or_create_collection("laws")
+embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 
-print(f"Loading vLLM model: {MODEL_NAME}")
+db = chromadb.PersistentClient(path=DB_PATH)
+collection = db.get_collection(COLLECTION_NAME)
+
+print(f"Loading model: {MODEL_NAME}")
+
 try:
-    llm = LLM(model=MODEL_NAME, trust_remote_code=True, gpu_memory_utilization=0.85, max_model_len=4096)
-    sampling_params = SamplingParams(temperature=0, top_p=0.95, max_tokens=500)
+    llm = LLM(
+        model=MODEL_NAME,
+        trust_remote_code=True,
+        gpu_memory_utilization=0.85,
+        max_model_len=4096
+    )
+
+    sampling_params = SamplingParams(
+        temperature=0.1,
+        top_p=0.9,
+        repetition_penalty=1.2,
+        max_tokens=350,
+        stop=[
+            "\n\nUser:",
+            "\n\nQuestion:",
+            "\n\nClause:"
+        ]
+    )
+
     print("vLLM loaded.")
+
 except Exception as e:
     print("vLLM load failed:", e)
     llm = None
 
+
 class Query(BaseModel):
     question: str
+
 
 class Agreement(BaseModel):
     text: str
 
-SYSTEM_PROMPT = """You are a Pakistani rental law expert. Use ONLY the retrieved law context (numbered clauses like "5.1:", "10.4:" etc.). Do not invent laws.
 
-If the user's clause or question violates any retrieved clause, output:
-Violation: Yes
-Affected Clauses: list the clause numbers (e.g., 5.1, 10.2)
-Reason: one sentence explaining the violation.
+SYSTEM_PROMPT = """
+You are an expert Pakistani rental law assistant.
 
-If no violation:
-Violation: No
-Affected Clauses: N/A
-Reason: The clause appears compliant.
+Rules:
+- Use ONLY the retrieved law clauses.
+- Never repeat the same sentence.
+- Never generate duplicate paragraphs.
+- Be concise and factual.
+- Mention exact clause numbers when relevant.
+- If context is insufficient, clearly say so.
 
-If the retrieved law is insufficient:
-Violation: Unknown
-Affected Clauses: N/A
-Reason: Insufficient legal context found.
+Response format:
 
-Keep answers short and factual."""
+Violation: Yes/No/Unknown
+
+Relevant Clauses:
+- clause number
+
+Explanation:
+Short explanation in plain English.
+""".strip()
+
+
+def clean_text(text: str):
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def extract_unique_lines(text: str):
+    lines = text.splitlines()
+
+    seen = set()
+    final_lines = []
+
+    for line in lines:
+        line = line.strip()
+
+        if not line:
+            continue
+
+        if line.lower() not in seen:
+            seen.add(line.lower())
+            final_lines.append(line)
+
+    return "\n".join(final_lines)
+
 
 def call_vllm(prompt: str):
     if llm is None:
         return "vLLM not loaded."
+
     try:
         outputs = llm.generate([prompt], sampling_params)
-        return outputs[0].outputs[0].text.strip()
+
+        text = outputs[0].outputs[0].text.strip()
+
+        text = extract_unique_lines(text)
+
+        return text
+
     except Exception as e:
         return str(e)
 
-def retrieve_laws(query, n_results=3):
-    emb = embedding_model.encode(query).tolist()
-    retrieved = collection.query(query_embeddings=[emb], n_results=n_results)
-    docs = retrieved["documents"][0] if retrieved["documents"] else []
-    return docs
 
-def analyze_question(question: str):
-    laws = retrieve_laws(question)
-    combined = "\n\n".join(laws)
-    prompt = f"""{SYSTEM_PROMPT}
+def retrieve_laws(query: str, n_results=5):
+    query = clean_text(query)
 
-User question: {question}
+    embedding = embedding_model.encode(
+        query,
+        normalize_embeddings=True
+    ).tolist()
 
-Retrieved law clauses:
-{combined}
+    results = collection.query(
+        query_embeddings=[embedding],
+        n_results=n_results
+    )
 
-Answer strictly in the required format."""
+    docs = results.get("documents", [[]])[0]
+    metas = results.get("metadatas", [[]])[0]
+
+    unique_docs = []
+    seen = set()
+
+    for doc, meta in zip(docs, metas):
+        doc = clean_text(doc)
+
+        if doc not in seen:
+            seen.add(doc)
+
+            unique_docs.append({
+                "clause": meta.get("clause", "unknown"),
+                "text": doc
+            })
+
+    return unique_docs
+
+
+def build_context(laws):
+    context_parts = []
+
+    for law in laws:
+        context_parts.append(
+            f"Clause {law['clause']}: {law['text']}"
+        )
+
+    return "\n\n".join(context_parts)
+
+
+def generate_response(user_input: str):
+    laws = retrieve_laws(user_input)
+
+    context = build_context(laws)
+
+    prompt = f"""
+{SYSTEM_PROMPT}
+
+User Input:
+{user_input}
+
+Retrieved Law Clauses:
+{context}
+
+Generate only one final answer.
+Do not repeat anything.
+""".strip()
+
     answer = call_vllm(prompt)
-    return {"question": question, "retrieved_laws": laws, "answer": answer}
 
-def analyze_text(text: str):
-    clauses = [c.strip() for c in re.split(r'\n|\. ', text) if len(c.strip()) > 40]
+    return {
+        "query": user_input,
+        "retrieved_laws": laws,
+        "answer": answer
+    }
+
+
+def split_agreement(text: str):
+    text = clean_text(text)
+
+    clauses = re.split(
+        r"(?i)(?:\n|\. )",
+        text
+    )
+
+    cleaned = []
+
+    for clause in clauses:
+        clause = clause.strip()
+
+        if len(clause) >= 40:
+            cleaned.append(clause)
+
+    return cleaned
+
+
+def analyze_agreement_text(text: str):
+    clauses = split_agreement(text)
+
     results = []
-    for i, clause in enumerate(clauses):
-        laws = retrieve_laws(clause)
-        combined = "\n\n".join(laws)
-        prompt = f"""{SYSTEM_PROMPT}
 
-Clause: {clause}
+    for idx, clause in enumerate(clauses):
+        response = generate_response(clause)
 
-Retrieved law clauses:
-{combined}
+        results.append({
+            "clause_number": idx + 1,
+            "clause": clause,
+            "analysis": response["answer"],
+            "retrieved_laws": response["retrieved_laws"]
+        })
 
-Answer strictly in the required format."""
-        analysis = call_vllm(prompt)
-        results.append({"clause_number": i+1, "clause": clause, "analysis": analysis, "retrieved_laws": laws})
-    return {"total_clauses": len(clauses), "results": results}
+    return {
+        "total_clauses": len(results),
+        "results": results
+    }
+
 
 @app.post("/ask")
 def ask(query: Query):
-    return analyze_question(query.question)
+    return generate_response(query.question)
+
 
 @app.post("/analyze-agreement")
 def analyze_agreement(agreement: Agreement):
-    return analyze_text(agreement.text)
+    return analyze_agreement_text(agreement.text)
+
 
 @app.post("/analyze-pdf")
 async def analyze_pdf(file: UploadFile = File(...)):
     contents = await file.read()
+
     pdf = pypdf.PdfReader(BytesIO(contents))
-    text = "\n".join([page.extract_text() or "" for page in pdf.pages])
-    return analyze_text(text)
+
+    text = "\n".join(
+        [page.extract_text() or "" for page in pdf.pages]
+    )
+
+    return analyze_agreement_text(text)
+
 
 @app.get("/health")
 def health():
-    return {"status": "running", "model": MODEL_NAME, "laws_count": collection.count(), "vllm_loaded": llm is not None}
+    return {
+        "status": "running",
+        "model": MODEL_NAME,
+        "laws_count": collection.count(),
+        "vllm_loaded": llm is not None
+    }

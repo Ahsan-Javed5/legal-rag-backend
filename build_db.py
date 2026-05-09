@@ -3,91 +3,68 @@ import chromadb
 import re
 
 DB_PATH = "/workspace/chroma_db"
+COLLECTION_NAME = "laws"
 
-# =========================
-# LOAD EMBEDDING MODEL
-# =========================
-model = SentenceTransformer('all-MiniLM-L6-v2')
+model = SentenceTransformer("all-MiniLM-L6-v2")
 
-# =========================
-# LOAD / RESET CHROMADB
-# =========================
 db = chromadb.PersistentClient(path=DB_PATH)
 
 try:
-    db.delete_collection("laws")
+    db.delete_collection(COLLECTION_NAME)
 except:
     pass
 
-collection = db.create_collection("laws")
+collection = db.create_collection(
+    name=COLLECTION_NAME,
+    metadata={"hnsw:space": "cosine"}
+)
 
-# =========================
-# LOAD LAW FILE (simplified clauses)
-# =========================
 with open("rental_acts.txt", "r", encoding="utf-8") as f:
-    lines = f.readlines()
+    raw_text = f.read()
 
-# =========================
-# CHUNKING: each numbered clause becomes its own chunk
-# =========================
+pattern = r"(\d+\.\d+:\s.*?)(?=\n\d+\.\d+:|\Z)"
+matches = re.findall(pattern, raw_text, re.DOTALL)
+
 chunks = []
-current_chunk = ""
-
-for line in lines:
-    line = line.strip()
-    if not line:
-        continue                     # skip empty lines
-
-    # A clause starts with a pattern like "5.1:" or "10.1:", etc.
-    # We treat each such line as its own chunk.
-    # This way every rule is independent and easy to retrieve.
-    if re.match(r'^\d+\.\d+:', line):
-        if current_chunk:
-            chunks.append(current_chunk)
-            current_chunk = ""
-        current_chunk = line
-    else:
-        # In case a clause spans two lines (unlikely in your clean file)
-        if current_chunk:
-            current_chunk += " " + line
-        else:
-            current_chunk = line
-
-# Add last chunk
-if current_chunk:
-    chunks.append(current_chunk)
-
-# Remove duplicates (preserve order)
 seen = set()
-unique_chunks = []
-for ch in chunks:
-    if ch not in seen:
-        seen.add(ch)
-        unique_chunks.append(ch)
 
-chunks = unique_chunks
+for match in matches:
+    chunk = " ".join(match.split())
 
-# Debug info
+    if len(chunk) < 25:
+        continue
+
+    if chunk not in seen:
+        seen.add(chunk)
+        chunks.append(chunk)
+
 print(f"Total chunks: {len(chunks)}")
-if chunks:
-    print("\nFirst 3 chunks:\n")
-    for i, ch in enumerate(chunks[:3]):
-        print(f"{i+1}. {ch[:150]}...\n")
 
-# =========================
-# STORE EMBEDDINGS
-# =========================
+embeddings = model.encode(
+    chunks,
+    batch_size=32,
+    normalize_embeddings=True,
+    show_progress_bar=True
+).tolist()
+
+ids = [f"law_{i}" for i in range(len(chunks))]
+
+metadatas = []
+
 for i, chunk in enumerate(chunks):
-    emb = model.encode(chunk).tolist()
-    collection.add(
-        ids=[f"law_{i}"],
-        embeddings=[emb],
-        documents=[chunk],
-        metadatas=[{
-            "source": "islamabad_rent_law_simplified",
-            "chunk_id": i,
-            "length": len(chunk)
-        }]
-    )
+    clause_match = re.match(r"^(\d+\.\d+):", chunk)
 
-print(f"\nDatabase built successfully with {len(chunks)} chunks.")
+    metadatas.append({
+        "clause": clause_match.group(1) if clause_match else "unknown",
+        "source": "islamabad_rental_law",
+        "chunk_id": i
+    })
+
+collection.add(
+    ids=ids,
+    embeddings=embeddings,
+    documents=chunks,
+    metadatas=metadatas
+)
+
+print("Database built successfully.")
